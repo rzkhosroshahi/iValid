@@ -36,5 +36,5 @@ export type IScheama = Record<string, IScheam>;
 
 export interface IErrors {
   field: string;
-  validation: Array<keyof typeof Validations>;
+  errors: Array<keyof typeof Validations>;
 }

@@ -39,7 +39,7 @@ describe("Validator constructor", () => {
     const expectedReult = [
       {
         field: "email",
-        validation: ["pattern", "minLength"]
+        errors: ["pattern", "minLength"]
       }
     ];
     const validator = new Validate(form);
@@ -87,11 +87,11 @@ describe("Validator constructor", () => {
     const expectedReult = [
       {
         field: "email",
-        validation: ["minLength"]
+        errors: ["minLength"]
       },
       {
         field: "name",
-        validation: ["required"]
+        errors: ["required"]
       }
     ];
     const validator = new Validate(form);

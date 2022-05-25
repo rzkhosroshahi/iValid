@@ -28,7 +28,7 @@ class Validate {
       invalids,
       ([field, validation]: [string, Array<keyof typeof Validations>]) => ({
         field,
-        validation
+        errors: validation
       })
     );
     return this.getErrors;
