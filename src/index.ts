@@ -16,10 +16,10 @@ class Validate {
           Validations[validationKey as keyof typeof Validations];
         if (validator(scheam.value, validation[validatorKey]) !== true) {
           if (invalids.has(field)) {
-            invalids.set(field, [validatorKey, ...invalids.get(field)]);
+            invalids.set(field, [validationKey, ...invalids.get(field)]);
             return invalids;
           }
-          invalids.set(field, [validatorKey]);
+          invalids.set(field, [validationKey]);
         }
         return invalids;
       });
@@ -53,38 +53,4 @@ class Validate {
   }
 }
 
-const obj: IScheama = {
-  email: {
-    value: "val",
-    validations: {
-      required: {
-        value: true
-      },
-      minLength: {
-        length: 2
-      },
-      pattern: {
-        pattern: /[A-Z]/g
-      }
-    }
-  },
-  password: {
-    value: "A",
-    validations: {
-      pattern: {
-        pattern: /[A-Z]/g
-      },
-      minLength: {
-        length: 2
-      }
-    }
-  }
-};
-
-const vv = new Validate(obj);
-
-console.log("validate", vv.validate());
-
-console.log("required", Validate.required("  "));
-console.log("pattern", Validate.pattern("A", /[A-Z]/g));
-console.log("minLength", Validate.minLength("Reza", 3));
+export default Validate;
