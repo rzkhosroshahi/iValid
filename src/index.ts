@@ -85,6 +85,6 @@ const vv = new Validate(obj);
 
 console.log("validate", vv.validate());
 
-// console.log("required", Validate.required("  "));
-// console.log("pattern", Validate.pattern("A", /[A-Z]/g));
-// console.log("minLength", Validate.minLength("Reza", 3));
+console.log("required", Validate.required("  "));
+console.log("pattern", Validate.pattern("A", /[A-Z]/g));
+console.log("minLength", Validate.minLength("Reza", 3));
